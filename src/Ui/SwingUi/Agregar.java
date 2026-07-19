@@ -5,7 +5,6 @@ import Data.GestorArchivotxt.GestorProveedor;
 import Data.GestorArchivotxt.GestorServicios;
 import Model.*;
 import Util.*;
-import Ui.SwingUi.*;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -74,8 +73,7 @@ public class Agregar extends JFrame {
         add(panelLateral, BorderLayout.EAST);
         add(panelInferior, BorderLayout.SOUTH);
 
-        // --- Acciones de los Botones ---
-
+        //Acciones de los Botones
         btnVer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

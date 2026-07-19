@@ -4,6 +4,9 @@ import Util.ValidadorEmail;
 import Util.ValidadorRut;
 import Util.ValidadorTelefono;
 
+/**
+ * Clase encargada de gestionar al Proveedor
+ */
 public class Proveedor extends Persona {
     private String tipoServicio;
 
@@ -41,10 +44,16 @@ public class Proveedor extends Persona {
         System.out.println("Tipo de servicio: " + tipoServicio);
     }
 
+    /**
+     * Devuelve una representación de los datos en forma de texto de la información de Proveedor
+     * Incluye las etiquetas de tipoServicio
+     * @return
+     */
+
     @Override
     public String toString() {
-        return "Proveedor{" +
-                "tipoServicio='" + tipoServicio + '\'' +
-                '}';
+        return "---Proveedor---" + super.toString() +
+                "|Tipo de servicio: " + tipoServicio +
+                '|';
     }
 }

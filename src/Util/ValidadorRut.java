@@ -1,7 +1,7 @@
 package Util;
 
 /**
- * Clase encargada de la validación del rut mediante regex
+ * Clase encargada de la validación del RUT mediante regex
  */
 
 public class ValidadorRut {

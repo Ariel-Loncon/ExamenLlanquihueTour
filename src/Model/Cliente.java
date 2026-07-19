@@ -4,6 +4,9 @@ import Util.ValidadorEmail;
 import Util.ValidadorRut;
 import Util.ValidadorTelefono;
 
+/**
+ *  Clase encargada de gestionar los datos del cliente
+ */
 public class Cliente extends Persona{
 
     private String ordenCompra;
@@ -63,11 +66,16 @@ public class Cliente extends Persona{
         System.out.println("Tipo de Pago: " + tipoDePago + "Orden de compra: " + ordenCompra + "Servicio: " + servicio);
     }
 
+    /**
+     * Devuelve una representación de los datos en forma de texto de la información de Cliente
+     * Incluye las etiquetas de ordenCompra y tipoDePago
+     * @return
+     */
     @Override
     public String toString() {
-        return "Cliente{" +
-                "ordenCompra='" + ordenCompra + '\'' +
-                ", tipoDePago='" + tipoDePago + '\'' +
-                '}';
+        return "---Cliente---" + super.toString() +
+                "|Orden de Compra: " + ordenCompra +
+                "|Tipo de pago: " + tipoDePago +
+                '|';
     }
 }

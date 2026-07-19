@@ -1,6 +1,8 @@
 package Model.Tours;
 
-import Model.Proveedor;
+/**
+ * Clase encargada de gestionar datos de Paseo Lacustre
+ */
 
 public class PaseoLacustre extends ServivioTuristico{
     private String tipoEmbarcacion;
@@ -36,10 +38,16 @@ public class PaseoLacustre extends ServivioTuristico{
         System.out.println("Tipo de Embarcación: " + tipoEmbarcacion);
     }
 
+    /**
+     * Devuelve una representación de los datos en forma de texto de la información de Paseo Lacustre
+     * incluye la etiquetas de tipoEmbarcacion
+     * @return
+     */
+
     @Override
     public String toString() {
-        return "PaseoLacustre{" +
-                "tipoEmbarcacion='" + tipoEmbarcacion + '\'' +
-                '}';
+        return "---Paseo Lacustre---" + super.toString() +
+                "|Tipo de embarcación:" + tipoEmbarcacion +
+                '|';
     }
 }

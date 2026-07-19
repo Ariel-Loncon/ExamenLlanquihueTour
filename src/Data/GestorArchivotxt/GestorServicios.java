@@ -74,7 +74,7 @@ public class GestorServicios {
     public boolean guardarServicioText(String tipo, String nombre, int duracion, String campoExtra, String filePath) {
         if (!GestorArchivo.Archivo(filePath)) return false;
         try (java.io.BufferedWriter bw = new java.io.BufferedWriter(new java.io.FileWriter(filePath, true))) {
-            // Formato: Tipo,Nombre,Duracion,CampoEspecifico
+
             String linea = String.join(",", tipo, nombre, String.valueOf(duracion), campoExtra);
             bw.write(linea);
             bw.newLine();

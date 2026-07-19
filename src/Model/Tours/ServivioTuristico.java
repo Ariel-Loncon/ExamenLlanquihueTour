@@ -1,7 +1,9 @@
 package Model.Tours;
-
-import Model.Proveedor;
 import Model.Registrable;
+
+/**
+ * SuperClase encargada de gestionar los datos de los servicios turísticos
+ */
 
 public abstract class ServivioTuristico implements Registrable {
     private String nombre;
@@ -39,11 +41,17 @@ public abstract class ServivioTuristico implements Registrable {
         System.out.println("Servicio turistico: " + nombre + duracionHoras );
     }
 
+    /**
+     * Devuelve una representación de los datos en forma de texto de la información de la super clase ServivioTuristico
+     * Parte con las etiquetas nombre y duracionHoras
+     * @return
+     */
+
     @Override
     public String toString() {
-        return "ServivioTuristico{" +
-                "nombre='" + nombre + '\'' +
-                ", duracionHoras=" + duracionHoras +
-                '}';
+        return "---Servicio Turístico---" +
+                "|Nombre: " + nombre +
+                "|Duración en horas: " + duracionHoras +
+                '|';
     }
 }

@@ -101,9 +101,8 @@ public class GestorCliente {
             String telefono = cliente.getNumeroTelefono().getValidadorTelefono();
             String ordenCompra = cliente.getOrdenCompra();
             String tipoPago = cliente.getTipoDePago();
-            String servicio = cliente.getServicio(); // <-- Obtener el servicio
+            String servicio = cliente.getServicio();
 
-            // CORRECCIÓN: Se añade el octavo parámetro 'servicio' al String join
             String linea = String.join(";", rut, nombre, email, direccionFormateada, telefono, ordenCompra, tipoPago, servicio);
 
             bw.write(linea);

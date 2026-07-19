@@ -1,6 +1,8 @@
 package Model.Tours;
 
-import Model.Proveedor;
+/**
+ * Clase encargada de gestionar los datos de TourGastronómico
+ */
 
 public class TourGastronomico extends ServivioTuristico{
     private int numeroParadas;
@@ -36,10 +38,15 @@ public class TourGastronomico extends ServivioTuristico{
         System.out.println("Número de paradas: " + numeroParadas);
     }
 
+    /**
+     * Devuelve una representación de los datos en forma de texto de la información de TourGastronomico
+     * Incluye la etiqueta de numeroParadas
+     * @return
+     */
     @Override
     public String toString() {
-        return "TourGastronomico{" +
-                "numeroParadas='" + numeroParadas + '\'' +
-                '}';
+        return "Tour Gastronómico{" + super.toString() +
+                "|Numero de paradas='" + numeroParadas +
+                '|';
     }
 }

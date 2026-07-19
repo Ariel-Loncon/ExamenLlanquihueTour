@@ -1,6 +1,10 @@
 package Model;
 import Util.*;
 
+/**
+ * SuperClase encargada de gestionar los datos de Cliente, Guía y Proveedor
+ */
+
 public abstract class Persona implements Registrable{
     private ValidadorRut rut;
     private String nombre;
@@ -70,14 +74,20 @@ public abstract class Persona implements Registrable{
         System.out.println("Persona: " + nombre + rut + email + direccion + numeroTelefono);
     }
 
+    /**
+     * Devuelve una representación de los datos en forma de texto de la información de Persona
+     * Posee las etiquetas de rut, nombre, email, direccion y numeroTelefono
+     * @return
+     */
+
     @Override
     public String toString() {
-        return "Persona{" +
-                "rut=" + rut +
-                ", nombre='" + nombre + '\'' +
-                ", email=" + email +
-                ", direccion='" + direccion + '\'' +
-                ", numero de Teléfono=" + numeroTelefono +
-                '}';
+        return "---Datos de: ---" +
+                "|Rut: " + rut +
+                "|Nombre: " + nombre +
+                "|Email: " + email +
+                "|Dirección: " + direccion +
+                "|Número de Teléfono: " + numeroTelefono +
+                '|';
     }
 }

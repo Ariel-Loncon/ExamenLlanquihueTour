@@ -4,6 +4,10 @@ import Util.ValidadorEmail;
 import Util.ValidadorRut;
 import Util.ValidadorTelefono;
 
+/**
+ *Clase encargada de gestionar los datos de Guía
+ */
+
 public class Guia extends Persona{
     private String idioma;
     private String especialidad;
@@ -50,5 +54,18 @@ public class Guia extends Persona{
     public void mostrarDatos() {
         super.mostrarDatos(); // Muestra RUT, Nombre, Email, Dirección, Teléfono
         System.out.println("Idioma manejado: " + idioma + "Especialidad: " + especialidad);
+    }
+
+    /**
+     * Devuelve una representación de los datos en forma de texto de la información de Guía
+     * Incluye las etiquetas de idioma y especialidad
+     * @return
+     */
+    @Override
+    public String toString() {
+        return "---Guia---" + super.toString() +
+                "|Idioma: " + idioma +
+                "|Especialidad: " + especialidad +
+                '|';
     }
 }

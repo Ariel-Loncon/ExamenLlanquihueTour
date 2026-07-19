@@ -13,7 +13,6 @@ public class ControladorCupos {
 
         int contador = 0;
         for (Cliente c : listaClientes) {
-            // Comparamos directamente usando el nuevo Getter que creaste
             if (c.getServicio() != null && c.getServicio().equalsIgnoreCase(tour)) {
                 contador++;
             }

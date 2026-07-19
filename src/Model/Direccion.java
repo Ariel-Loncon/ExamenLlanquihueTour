@@ -1,5 +1,8 @@
 package Model;
 
+/**
+ * Clase encargada de gestionar las direcciones de Cliente, Guia y Proveedor
+ */
 public class Direccion {
     private String calle;
     private String numero;
@@ -53,13 +56,19 @@ public class Direccion {
         this.region = region;
     }
 
+    /**
+     * Devuelve una representación de los datos en forma de texto de la información de Direccion
+     * Posee las etiquetas de cale, numer, comuna y region
+     * @return
+     */
+
     @Override
     public String toString() {
-        return "Direccion{" +
-                "calle='" + calle + '\'' +
-                ", numero='" + numero + '\'' +
-                ", comuna='" + comuna + '\'' +
-                ", region='" + region + '\'' +
-                '}';
+        return "---Dirección---" + super.toString() +
+                "|Calle: " + calle +
+                "|Número: " + numero +
+                "|Comuna: " + comuna +
+                "|Region: " + region +
+                '|';
     }
 }

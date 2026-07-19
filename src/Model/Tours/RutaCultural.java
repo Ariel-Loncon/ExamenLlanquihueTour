@@ -1,6 +1,8 @@
 package Model.Tours;
 
-import Model.Proveedor;
+/**
+ * Clase encargada de gestionar los datos de RutaCultural
+ */
 
 public class RutaCultural extends ServivioTuristico{
     private String lugarHistorico;
@@ -36,10 +38,15 @@ public class RutaCultural extends ServivioTuristico{
         System.out.println("Lugar histórico: " + lugarHistorico);
     }
 
+    /**
+     * Devuelve una representación de los datos en forma de texto de la información de Ruta Cultural
+     * Incluye la etiqueta de lugarHistorico
+     * @return
+     */
     @Override
     public String toString() {
-        return "RutaCultural{" +
-                "lugarHistorico='" + lugarHistorico + '\'' +
-                '}';
+        return "---Ruta Cultural---" + super.toString() +
+                "|Lugar histórico:" + lugarHistorico +
+                '|';
     }
 }

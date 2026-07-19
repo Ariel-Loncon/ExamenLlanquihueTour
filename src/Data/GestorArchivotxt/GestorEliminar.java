@@ -4,26 +4,12 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase encargada de gestionar la eliminación de líneas de texto de los distintos archivos de texto vinculado
+ */
+
 public class GestorEliminar {
-
-    private static String limpiarRut(String rut) {
-        if (rut == null) return "";
-        return rut.replaceAll("[^0-9kK]", "").toLowerCase();
-    }
-
-    public static boolean eliminarTour(int idAEliminar) {
-        String ruta = "resources/Cliente.txt";
-        return eliminarLinea(ruta, ";", (campos) -> {
-            // El ID de un Tour está en la posición 0
-            try {
-                int idActual = Integer.parseInt(campos[0].trim());
-                return idActual == idAEliminar;
-            } catch (NumberFormatException e) {
-                return false;
-            }
-        });
-    }
-
+    //para archivo de Guias
     public static boolean eliminarGuia(String rutAEliminar) {
         String ruta = "resources/Guias.txt";
         return eliminarLinea(ruta, ";", (campos) -> {
@@ -32,8 +18,7 @@ public class GestorEliminar {
             return rutActual.equalsIgnoreCase(rutAEliminar.trim());
         });
     }
-
-
+    //Para archivo de Proveedores
     public static boolean eliminarOperador(String nombreAEliminar) {
         String ruta = "resources/Proveedores.txt";
         return eliminarLinea(ruta, ";", (campos) -> {
@@ -42,7 +27,7 @@ public class GestorEliminar {
             return nombreActual.equalsIgnoreCase(nombreAEliminar.trim());
         });
     }
-
+    //Para archivo de Clientes
     public static boolean eliminarCliente(String ordenEliminar) {
         String ruta = "resources/Cliente.txt";
 
@@ -54,7 +39,7 @@ public class GestorEliminar {
             return numeroOrdenA.equalsIgnoreCase(ordenEliminar.trim());
         });
     }
-
+    //Para archivo de Servicios
     public static boolean eliminarServicio(String tipo, String nombreServicioAEliminar) {
         String ruta = "resources/Servicios.txt";
 
@@ -88,7 +73,7 @@ public class GestorEliminar {
 
                 String[] campos = line.split(separador);
                 if (criterio.debeEliminar(campos)) {
-                    encontrado = true; // Se marca como encontrado y NO se añade a la lista (se elimina)
+                    encontrado = true;
                 } else {
                     lineasAConservar.add(line);
                 }

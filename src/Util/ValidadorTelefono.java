@@ -1,5 +1,9 @@
 package Util;
 
+/**
+ * Clase encargada de la validación del número telefónico mediante regex
+ */
+
 public class ValidadorTelefono {
     private String validadorTelefono;
 
