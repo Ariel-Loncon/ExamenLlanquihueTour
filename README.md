@@ -58,6 +58,7 @@ La aplicación permite gestionar de manera integral el catálogo de servicios tu
     ├── ValidadorEmail.java         # Validación de formatos mediante expresiones regulares
     ├── ValidadorRut.java           # Validación estricta y lógica del dígito verificador del RUT
     └── ValidadorTelefono.java      # Validación de longitud y caracteres para números telefónicos
+    └── GestorLineasTxt.java        # Validación de lineas, genera un salto para evitar corrupcionde archivo, (en caso de intervencion manual del archivo txt)
 ````
 ---
 
