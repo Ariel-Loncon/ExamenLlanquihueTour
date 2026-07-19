@@ -79,7 +79,10 @@ public class GestorGuias {
     }
 
     public boolean guardarGuiaText(Guia guia, String filePath) {
-        if (!GestorArchivo.Archivo(filePath)) return false;
+        if (!GestorArchivo.Archivo(filePath))
+            return false;
+        //Salto de línea para evitar errores al manejo manual del archivo txt
+        Util.GestorLineasTxt.asegurarSaltoDeLineaFinal(filePath);
         try (java.io.BufferedWriter bw = new java.io.BufferedWriter(new java.io.FileWriter(filePath, true))) {
             String direccionFormateada = String.format("%s,%s,%s,%s",
                     guia.getDireccion().getCalle(), guia.getDireccion().getNumero(),

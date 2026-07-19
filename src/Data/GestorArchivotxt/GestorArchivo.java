@@ -18,7 +18,6 @@ public class GestorArchivo {
                     System.out.println("[INFO] Carpetas creadas: " + parentDir.getAbsolutePath());
                 }
             }
-
             // Crear archivo si no existe
             if (!file.exists()) {
                 if (file.createNewFile()) {
@@ -32,4 +31,5 @@ public class GestorArchivo {
             return false;
         }
     }
+
 }

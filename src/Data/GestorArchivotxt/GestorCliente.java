@@ -3,6 +3,7 @@ import Model.*;
 import Util.ValidadorEmail;
 import Util.ValidadorRut;
 import Util.ValidadorTelefono;
+import Util.GestorLineasTxt;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -37,19 +38,19 @@ public class GestorCliente {
                 //Se separa la línea con ";" para convertirlas en un arreglo
                 String[] data = line.split(";");
                 // verifica cantidad de campos en el arreglo
-                if (data.length != 8){
+                if (data.length != 8) {
                     System.out.println("Error en línea " + lineNumber + ": Estructura incorrecta de cliente (Se esperaban 8 campos, se encontraron " + data.length + ").");
                     continue;
                 }
 
                 try {
                     //Se transforman y validan los datos al tipo correspondiente
-                    ValidadorRut clienteRut     = new ValidadorRut(data[0].trim());
-                    String nombre               = data[1].trim();
+                    ValidadorRut clienteRut = new ValidadorRut(data[0].trim());
+                    String nombre = data[1].trim();
                     ValidadorEmail clienteEmail = new ValidadorEmail(data[2].trim());
 
                     // Ejemplo si en data[3] viene "Calle, Número, Comuna, Region"
-                    String[] partesDireccion    = data[3].trim().split(",");
+                    String[] partesDireccion = data[3].trim().split(",");
                     Direccion clienteDireccion;
                     if (partesDireccion.length == 4) {
                         clienteDireccion = new Direccion(
@@ -65,28 +66,31 @@ public class GestorCliente {
 
                     ValidadorTelefono clienteTelefono = new ValidadorTelefono(data[4].trim());
                     String ordenCompra = data[5].trim();
-                    String tipoPago    = data[6].trim();
-                    String servicio    = data[7].trim();
+                    String tipoPago = data[6].trim();
+                    String servicio = data[7].trim();
                     //Se crea al objeto Cliente
-                    Cliente newCliente = new Cliente(clienteRut,nombre,clienteEmail,clienteDireccion,clienteTelefono,ordenCompra,tipoPago,servicio);
+                    Cliente newCliente = new Cliente(clienteRut, nombre, clienteEmail, clienteDireccion, clienteTelefono, ordenCompra, tipoPago, servicio);
                     //Se agrega a la lista, cada cliente leido se agrega a la ArrayList
                     clienteList.add(newCliente);
 
                 } catch (IllegalArgumentException ex) {
-                    System.out.println("Error de validación de cliente en linea: " + lineNumber + ": "+ ex.getMessage());
+                    System.out.println("Error de validación de cliente en linea: " + lineNumber + ": " + ex.getMessage());
                 }
             }
         } catch (IOException e) {
-            System.out.println("Error al leer archivo de clientes: "+ e.getMessage());
+            System.out.println("Error al leer archivo de clientes: " + e.getMessage());
         }
         return clienteList;
     }
+
     //Escribe en el archivo de texto
     public boolean guardarClienteText(Cliente cliente, String filePath) {
         //Verifica que exista el archivo
         if (!GestorArchivo.Archivo(filePath)) {
             return false;
         }
+        //Salto de línea para evitar errores al manejo manual del archivo txt
+        Util.GestorLineasTxt.asegurarSaltoDeLineaFinal(filePath);
         //abre el archivo de texto y agrega información sin sobreescribir
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath, true))) {
 
@@ -114,4 +118,5 @@ public class GestorCliente {
             return false;
         }
     }
+
 }

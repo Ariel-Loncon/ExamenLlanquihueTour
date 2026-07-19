@@ -7,3 +7,4 @@ ExcursionCultural,Circuito ruta Huilliche,3,Comunidad El Islote
 TourGastronomico,Onces Alemanas,2,2
 TourGastronomico,Agroturismo y Productos Locales,3,2
 TourGastronomico,Ruta del Mar y Fuegos Sureños,2,2
+TourGastronomico,Ruta del Mar y Fuegos Sureños,2

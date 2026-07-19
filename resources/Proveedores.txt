@@ -1,1 +1,3 @@
 12345678-9;Ecobotes;eco@gmail.com;flores,4566,Llanquihue,Los Lagos;987654321;Botes Kayaks
+12345678-8;Ecobotes;eco@gmail.com;flores,4566,Llanquihue,Los Lagos;987654321;
+23.345675-k;Sweet Food;food@gmail.com;Dorzal,4567,Llanquihue,Los Lagos;987654321;Comida

@@ -1,1 +1,2 @@
-12345678-9;Juan;juan@gmail.com;costa,231,Llanquihue,Los Lagos;987654321;Ingles;Lugares Turisticos
+12345678-9;Juan;juan@gmail.com;costa,231,Llanquihue,Los Lagos;987654321;Ingles;
+12345678-8;Julio;ju@gmail.com;flor,23,Llanquihue,Los Lagos;987654321;Ingles;Gastronomia

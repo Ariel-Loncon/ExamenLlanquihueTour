@@ -1,6 +1,8 @@
-12345678-9;qwe;qwe@gmail.com;qwe,123,qwe,qwe;987654321;OC-2;Efectivo;Puerto Varas
 12345678-9;asdf;sdf@gmail.com;qer,123,qtyyrty,rty;987654321;OC-3;Efectivo;Puerto Varas
 12345678-9;wer;erwwer@gmail.com;qewr,123,qwe,qwe;987654321;OC-4;Efectivo;Puerto Varas
 12345678-9;Carlos;carlos@gmail.com;sur,123,Renca,Metropolitana;987654321;OC-5;Efectivo;Circuito Frutillar
 12345678-9;Pedro;pedro@gmail.com;Palomas,456,Independencia,Metropolitana;987654321;OC-6;Efectivo;Puerto Varas
-12345678-9;Javiera;jav@gmail.com;flores,5678,Pudahuel,Metropolitana;987654321;OC-7;Transferencia;Onces Alemanas
+12345678-9;qweqwe;qweqw@gmail.com;qwe,qew,qwe,qwe;987654321;OC-7;Efectivo;
+12345678-9;qweqwe;qwe@gmail.com;qwe,123412,qweqw,qwe;987654321;OC-7;Efectivo;Onces Alemanas
+12345678-9;Juan;ju@gmail.com;Dorsal,234,Pudahuel,Metropolitana;987654321;OC-8;Tarjeta de Débito;Agroturismo y Productos Locales
+12345678-9;juan;ju@gmail.com;flor,2323,Renca,Metropolitana;987654321;OC-9;Tarjeta de Crédito;Ruta del Mar y Fuegos Sureños
