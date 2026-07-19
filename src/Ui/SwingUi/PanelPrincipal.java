@@ -45,7 +45,7 @@ public class PanelPrincipal extends JFrame {
         add(btnAgregarDatos, gbc);
 
         gbc.gridx = 1; gbc.gridy = 1;
-        add(btnListaClientes, gbc); // <-- Añadido al lado de Agregar Datos
+        add(btnListaClientes, gbc);
 
         // Fila 2: Botón Salir centrado o expandido en la parte inferior
         gbc.gridx = 0; gbc.gridy = 2;

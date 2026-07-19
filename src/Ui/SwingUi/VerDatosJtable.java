@@ -22,7 +22,7 @@ public class VerDatosJtable {
         modeloTabla.setRowCount(0);
         modeloTabla.setColumnCount(0);
 
-        // 2. Instanciar el gestor y cargar los datos frescos desde los archivos txt
+        // 2. Inicia el gestor y cargar los datos frescos desde los archivos txt
         GestorEntidades gestor = new GestorEntidades();
         gestor.cargarTodo();
 
@@ -88,7 +88,6 @@ public class VerDatosJtable {
                     }
                 }
                 break;
-
             case "Ruta Cultural":
                 modeloTabla.addColumn("Nombre del Tour");
                 modeloTabla.addColumn("Duración (Hrs)");
@@ -133,8 +132,7 @@ public class VerDatosJtable {
             JOptionPane.showMessageDialog(null, "Por favor, seleccione una fila de la tabla para eliminar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             return false;
         }
-
-        // 2. Obtener la clave primaria de la fila (RUT o Nombre)[cite: 27]
+        // 2. Obtener la clave primaria de la fila (RUT o Nombre)
         String claveEliminar = tabla.getValueAt(filaSeleccionada, 0).toString();
 
         // 3. Confirmación del usuario
@@ -147,35 +145,28 @@ public class VerDatosJtable {
         }
 
         boolean exitoArchivo = false;
-
         // 4. Delegar la eliminación al GestorEliminar según el tipo de entidad
         switch (entidadSeleccionada) {
             case "Guia":
                 // Elimina del archivo Guias.txt usando el RUT
                 exitoArchivo = Data.GestorArchivotxt.GestorEliminar.eliminarGuia(claveEliminar);
                 break;
-
             case "Proveedor":
-                // Elimina del archivo Proveedores.txt usando el RUT/Nombre[cite: 36]
+                // Elimina del archivo Proveedores.txt usando el RUT/Nombre
                 exitoArchivo = Data.GestorArchivotxt.GestorEliminar.eliminarOperador(claveEliminar);
                 break;
-
             case "Paseo Lacustre":
-                // Elimina de Servicios.txt pasando el Tipo exacto y el Nombre[cite: 36]
+                // Elimina de Servicios.txt pasando el Tipo exacto y el Nombre
                 exitoArchivo = Data.GestorArchivotxt.GestorEliminar.eliminarServicio("PaseoLacustre", claveEliminar);
                 break;
-
             case "Ruta Cultural":
-                // Tu GestorServicios guarda esto como "ExcursionCultural"[cite: 33, 38], pasamos ese identificador
                 exitoArchivo = Data.GestorArchivotxt.GestorEliminar.eliminarServicio("ExcursionCultural", claveEliminar);
                 break;
-
             case "Tour Gastronomico":
-                // Elimina de Servicios.txt pasando el Tipo exacto y el Nombre[cite: 36]
+                // Elimina de Servicios.txt pasando el Tipo exacto y el Nombre
                 exitoArchivo = Data.GestorArchivotxt.GestorEliminar.eliminarServicio("TourGastronomico", claveEliminar);
                 break;
         }
-
         // 5. Informar al usuario del resultado de la operación
         if (exitoArchivo) {
             JOptionPane.showMessageDialog(null, "Registro eliminado exitosamente de los archivos.", "Éxito", JOptionPane.INFORMATION_MESSAGE);

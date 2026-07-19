@@ -96,22 +96,17 @@ public class VentanaListaClientes extends JFrame {
         btnBorrar.addActionListener(e -> eliminarClienteSeleccionado());
         btnSalir.addActionListener(e -> dispose());
 
-        // Inicializar el segundo combo con la categoría seleccionada por defecto ("Todos")
         actualizarComboNombres((String) comboFiltroCategoria.getSelectedItem());
-
         // Carga inicial completa de la tabla
         cargarClientesFiltrados();
     }
 
-    /**
-     * Llena el combo dinámico de nombres específicos basándose en la categoría seleccionada
-     */
     private void actualizarComboNombres(String categoria) {
         comboNombresServicios.removeAllItems();
 
         if (categoria.equals("Todos")) {
             comboNombresServicios.addItem("Todos los Tours");
-            comboNombresServicios.setEnabled(false); // No tiene sentido elegir un tour si se quiere ver "Todos"
+            comboNombresServicios.setEnabled(false);
             return;
         }
 
@@ -148,21 +143,17 @@ public class VentanaListaClientes extends JFrame {
         ArrayList<Cliente> listaClientes = gc.readClienteText("resources/Cliente.txt");
 
         for (Cliente c : listaClientes) {
-
             // 1. Si el primer combo es "Todos", pasan todos los clientes sin importar qué
             if (!categoriaSeleccionada.equals("Todos")) {
-
                 // 2. Si se seleccionó una categoría pero el segundo combo dice que no hay servicios, no mostramos nada
                 if (tourEspecificoSeleccionado.startsWith("No hay servicios")) {
                     continue;
                 }
-
                 // 3. FILTRO EXACTO POR NOMBRE: Si el servicio del cliente no coincide con el JComboBox específico, se salta
                 if (c.getServicio() == null || !c.getServicio().equalsIgnoreCase(tourEspecificoSeleccionado)) {
                     continue;
                 }
             }
-
             modeloTabla.addRow(new Object[]{
                     c.getOrdenCompra(),
                     c.getRut().getValidadorRut(),
@@ -176,9 +167,7 @@ public class VentanaListaClientes extends JFrame {
     }
 
     private void eliminarClienteSeleccionado() {
-
         int filaSeleccionada = tablaClientes.getSelectedRow();
-
         if (filaSeleccionada == -1) {
             JOptionPane.showMessageDialog(this,
                     "Seleccione un cliente.",
@@ -197,9 +186,7 @@ public class VentanaListaClientes extends JFrame {
                 JOptionPane.YES_NO_OPTION);
 
         if (respuesta == JOptionPane.YES_OPTION) {
-
             boolean eliminado = GestorEliminar.eliminarCliente(ordenEliminar);
-
             if (eliminado) {
                 JOptionPane.showMessageDialog(this, "Cliente eliminado.");
                 cargarClientesFiltrados();

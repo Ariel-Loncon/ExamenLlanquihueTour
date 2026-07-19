@@ -242,11 +242,9 @@ public class Agregar extends JFrame {
 
         ventanaForm.setVisible(true);
     }
-
     private void agregarFormRow(Container c, String label, JComponent comp, GridBagConstraints gbc, int row) {
         agregarCampoForm(c, label, comp, gbc, row);
     }
-
     private void agregarCampoForm(Container c, String label, JComponent comp, GridBagConstraints gbc, int row) {
         gbc.gridwidth = 1;
         gbc.gridx = 0; gbc.gridy = row;

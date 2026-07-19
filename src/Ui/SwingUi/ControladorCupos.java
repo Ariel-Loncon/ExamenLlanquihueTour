@@ -19,7 +19,6 @@ public class ControladorCupos {
         }
         return contador;
     }
-
     public static boolean registrarCupo(String tour) {
         return getCupos(tour) < LIMITE_MAXIMO;
     }
