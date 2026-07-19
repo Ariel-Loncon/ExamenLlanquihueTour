@@ -1,0 +1,3 @@
+12345678-9;qwe;qwe@gmail.com;qwe,123,qwe,qwe;987654321;OC-2;Efectivo;Puerto Varas
+12345678-9;asdf;sdf@gmail.com;qer,123,qtyyrty,rty;987654321;OC-3;Efectivo;Puerto Varas
+12345678-9;wer;erwwer@gmail.com;qewr,123,qwe,qwe;987654321;OC-4;Efectivo;Puerto Varas

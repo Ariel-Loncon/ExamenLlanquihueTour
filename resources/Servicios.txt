@@ -1,0 +1,9 @@
+PaseoLacustre,Puerto Varas,1,Eléctrico
+PaseoLacustre,Frutillar,1,Eléctrica
+PaseoLacustre,Ecoturismo,2,Kayaks
+ExcursionCultural,Circuito Frutillar,3,Museo Colonial Alemán
+ExcursionCultural,Circuito Puerto Varas,3,Iglesia del Sagrado Corazón de Jesús
+ExcursionCultural,Circuito ruta Huilliche,3,Comunidad El Islote
+TourGastronomico,Onces Alemanas,2,2
+TourGastronomico,Agroturismo y Productos Locales,3,2
+TourGastronomico,Ruta del Mar y Fuegos Sureños,2,2
